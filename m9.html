@@ -5,13 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Button Example</title>
   <style>
-  
-  .designed-by {
-    text-align: center;
-    margin-top: 20px;
-    color: red; /* Add this lone to set the text color to red */
-  }
-    /* CSS to hide search biar */
+    /* CSS to hide search bar */
     body::-webkit-scrollbar {
       display: none;
     }
@@ -28,7 +22,7 @@
     .button-container {
       text-align: center;
     }
-  
+
     .button-53 {
       background-color: #3DD1E7;
       border: 0 solid #E5E7EB;
@@ -54,11 +48,11 @@
       -webkit-user-select: none;
       touch-action: manipulation;
     }
-  
+
     .button-53:focus {
       outline: 0;
     }
-  
+
     .button-53:after {
       content: '';
       position: absolute;
@@ -68,50 +62,40 @@
       width: calc(100% - 1px);
       height: calc(100% - 1px);
     }
-  
+
     .button-53:hover:after {
       bottom: 2px;
       left: 2px;
     }
-  
+
     .designed-by {
       text-align: center;
       margin-top: 20px;
     }
-  
+
     .designed-by a {
       color: #000000;
       text-decoration: none;
+      animation: burning 2s infinite;
+    }
+
+    @keyframes burning {
+      0% { color: red; }
+      25% { color: orange; }
+      50% { color: yellow; }
+      75% { color: orange; }
+      100% { color: red; }
     }
   </style>
-  <script>
-    // JavaScript to make the page full screen
-    window.addEventListener("load", function() {
-      var isInFullScreen = (document.fullScreenElement && document.fullScreenElement !== null) ||
-                           (document.mozFullScreen || document.webkitIsFullScreen);
-
-      var docElm = document.documentElement;
-
-      if (!isInFullScreen) {
-        if (docElm.requestFullscreen) {
-          docElm.requestFullscreen();
-        } else if (docElm.mozRequestFullScreen) {
-          docElm.mozRequestFullScreen();
-        } else if (docElm.webkitRequestFullScreen) {
-          docElm.webkitRequestFullScreen();
-        }
-      }
-    });
-  </script>
 </head>
 <body>
   <div class="button-container">
-  <h1>m9 shan koe mee</h1>
+    <h1>m9 shan koe mee</h1>
     <h2>Viber မှတဆင့် ဆက်သွယ်ရန် နိပ်ပါ။</h2>
     <h2>Contact Us from Viber</h2>
     <a class="button-53" href="https://cutt.ly/Hwu48IG0" role="button">Go To Viber</a>
     <div class="designed-by">
-     <a href="https://myandev.github.io" target="_blank" class="designed-by">Designed by MyanDev</a>
+      <a href="https://myandev.github.io" target="_blank" class="designed-by">Designed by MyanDev</a>
     </div>
   </div>
 </body>
