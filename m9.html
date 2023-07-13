@@ -1,15 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Redirect Page</title>
-  <script>
-    window.onload = function() {
-      window.location.href = "https://cutt.ly/mwiOwKrn"; // Replace with the desired URL
-    };
-  </script>
+  <title>Redirect viber page</title>
+  <style>
+    /* CSS styles */
+    body {
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333333;
+      margin-top: 100px;
+    }
+
+    p {
+      color: #777777;
+    }
+  </style>
 </head>
 <body>
-  <!-- Optional: You can include some content here that will be shown momentarily before the redirect happens -->
-  <h1> wait a moment...</h1>
+  <h1>Redirecting to viber ...</h1>
+  <p>If you are not redirected, <a href="viber://pa?chatURI=m9galaxy">click here</a>.</p>
+
+  <script>
+    // JavaScript code
+    function redirect() {
+      window.location.href = 'viber://pa?chatURI=m9galaxy';
+    }
+
+    function showError() {
+      const now = new Date();
+      const hours = now.getHours();
+      const minutes = now.getMinutes();
+
+      if ((hours === 19 && minutes >= 30) || (hours >= 20 && hours < 23)) {
+        const errorMessage = document.createElement('h1');
+        errorMessage.innerText = 'This webpage is unavailable now, please try again later.';
+
+        document.body.innerHTML = '';
+        document.body.appendChild(errorMessage);
+      }
+    }
+
+    window.onload = function() {
+      redirect();
+      showError();
+    };
+
+    // Disable right-click
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+
+    // Disable inspection (for Chrome and Firefox)
+    document.onkeydown = function(e) {
+      if (e.keyCode === 123 || (e.ctrlKey && e.shiftKey && e.keyCode === 73)) {
+        return false;
+      }
+    };
+  </script>
 </body>
 </html>
