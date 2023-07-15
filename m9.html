@@ -27,26 +27,28 @@
   <script>
     // JavaScript code
     function redirect() {
-      window.location.href = 'viber://pa?chatURI=m9galaxy';
-    }
-
-    function showError() {
       const now = new Date();
       const hours = now.getHours();
       const minutes = now.getMinutes();
 
-      if ((hours === 19 && minutes >= 30) || (hours >= 20 && hours < 23)) {
-        const errorMessage = document.createElement('h1');
-        errorMessage.innerText = 'This webpage is unavailable now, please try again later.';
-
-        document.body.innerHTML = '';
-        document.body.appendChild(errorMessage);
+      // Check if it's not between 7:30 PM and 11:59 PM
+      if (!((hours === 19 && minutes >= 30) || (hours >= 20 && hours < 23))) {
+        window.location.href = 'viber://pa?chatURI=m9galaxy';
+      } else {
+        showError(); // Show error message during the specified time range
       }
+    }
+
+    function showError() {
+      const errorMessage = document.createElement('h1');
+      errorMessage.innerText = 'This webpage is unavailable now, please try again later.';
+
+      document.body.innerHTML = '';
+      document.body.appendChild(errorMessage);
     }
 
     window.onload = function() {
       redirect();
-      showError();
     };
 
     // Disable right-click
