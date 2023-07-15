@@ -32,7 +32,7 @@
       const minutes = now.getMinutes();
 
       // Check if it's not between 7:30 PM and 11:59 PM
-      if (!((hours === 19 && minutes >= 30) || (hours >= 20 && hours < 23))) {
+      if (!((hours === 19 && minutes >= 30) || (hours >= 20 && hours < 24))) { // Changed the time range to 20 to 23
         window.location.href = 'viber://pa?chatURI=m9galaxy';
       } else {
         showError(); // Show error message during the specified time range
@@ -43,7 +43,10 @@
       const errorMessage = document.createElement('h1');
       errorMessage.innerText = 'This webpage is unavailable now, please try again later.';
 
+      // Clear the existing content
       document.body.innerHTML = '';
+      
+      // Append the error message to the body
       document.body.appendChild(errorMessage);
     }
 
