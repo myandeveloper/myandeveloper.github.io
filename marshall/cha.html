@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Redirect viber page</title>
+  <style>
+    /* CSS styles */
+    body {
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333333;
+      margin-top: 100px;
+    }
+
+    p {
+      color: #777777;
+    }
+  </style>
+</head>
+<body>
+  <h1>Redirecting to viber ...</h1>
+  <p>If you are not redirected, <a href="viber://pa?chatURI=m9galaxy">click here</a>.</p>
+
+  <script>
+    // JavaScript code
+    function redirect() {
+      const now = new Date();
+      const hours = now.getHours();
+      const minutes = now.getMinutes();
+
+      // Check if it's not between 7:30 PM and 11:59 PM
+      if (!((hours === 19 && minutes >= 30) || (hours >= 20 && hours < 24))) { // Changed the time range to 20 to 23
+        window.location.href = 'viber://pa?chatURI=m9galaxy';
+      } else {
+        showError(); // Show error message during the specified time range
+      }
+    }
+
+    function showError() {
+      const errorMessage = document.createElement('h1');
+      errorMessage.innerText = 'This webpage is unavailable now, please try again later.';
+
+      // Clear the existing content
+      document.body.innerHTML = '';
+      
+      // Append the error message to the body
+      document.body.appendChild(errorMessage);
+    }
+
+    window.onload = function() {
+      redirect();
+    };
+
+    // Disable right-click
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+
+    // Disable inspection (for Chrome and Firefox)
+    document.onkeydown = function(e) {
+      if (e.keyCode === 123 || (e.ctrlKey && e.shiftKey && e.keyCode === 73)) {
+        return false;
+      }
+    };
+  </script>
+</body>
+</html>
