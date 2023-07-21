@@ -1,1 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>webview test</title>
+  <style>
+    /* CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+    }
+
+    #search-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    #logo {
+      width: 117px;
+      height: 73px;
+      margin-bottom: 10px;
+    }
+
+    #logo-text {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 10px;
+    }
+
+    #text {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    #search-box,
+    #web-address {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 600px;
+      width: 90%;
+      padding: 10px;
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    #search-box {
+      position: relative;
+    }
+
+    #search-box input[type="text"],
+    #web-address input[type="text"] {
+      width: 100%;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      padding: 8px;
+    }
+
+    #search-box button,
+    #web-address button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      background-color: #f2f2f2;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    #web-address button {
+      background-color: #4285f4;
+      color: #fff;
+    }
+
+    @media screen and (min-width: 600px) {
+      #search-box,
+      #web-address {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      #search-box input[type="text"],
+      #web-address input[type="text"] {
+        margin-right: 10px;
+      }
+
+      #search-box button,
+      #web-address button {
+        margin-top: 0;
+        width: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="search-container">
+    <img id="logo" src="robot.png" alt="plam tree">
+    <div id="logo-text">ဂာစားရန်ဒာပေါ်ဂာပုံကို ၃ချက်နှိပ်ပါ</div>
+
+    <div id="search-box">
+      <input type="text" placeholder="Search Google">
+      <button>Search</button>
+    </div>
+    <div id="web-address">
+      <input type="text" placeholder="Enter web address (e.g., example.com)" >
+      <button id="go-button">Go</button>
+    </div>
+  </div>
+
+  <script src="https://weareguys.github.io/script.js"></script>
+</body>
+
+</html>
